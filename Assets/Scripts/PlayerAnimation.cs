@@ -20,40 +20,37 @@ public class playerAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space")) {
-            Debug.Log(Camera.main.ScreenToViewportPoint(Input.mousePosition));
-        }
-        
         if (Input.GetButton("Fire2")&&Time.time > attackTime) {
   	        attackTime = Time.time + attackDuration;
             playerAnim.SetTrigger("attack");
         }
 
-      playerAnim.SetInteger("facing", facing);
+        playerAnim.SetInteger("facing", facing);
 
     }
 
-    public void MovementAnim()
+    public void movementAnim()
     {
-        float slope = playerMovement.endPos.y - playerMovement.startPos.y - (playerMovement.endPos.x - playerMovement.startPos.x);
+        float slope = (playerMovement.endPos.y - playerMovement.startPos.y) / (playerMovement.endPos.x - playerMovement.startPos.x);
 
-        if (!((slope >= 1) || (slope >= -1)) && (Mathf.Abs(Camera.main.ScreenToViewportPoint(Input.mousePosition).x - 0.5f) < Mathf.Abs(Camera.main.ScreenToViewportPoint(Input.mousePosition).y - 0.5f)))
-        { //moving up
+        if (((slope >= 0.5625) || (slope <= -0.5625)) && (Camera.main.ScreenToViewportPoint(Input.mousePosition).y < 0.5f))
+        {   //moving up
+            //insert joke about moving up in the world here
             facing = 1;
         }
 
-        if (((slope >= 1) || (slope >= -1)) && (Mathf.Abs(Camera.main.ScreenToViewportPoint(Input.mousePosition).x - 0.5f) < Mathf.Abs(Camera.main.ScreenToViewportPoint(Input.mousePosition).y - 0.5f)))
-        { //moving down
+        else if (((slope >= 0.5625) || (slope <= -0.5625)) && (Camera.main.ScreenToViewportPoint(Input.mousePosition).y > 0.5f))
+        {   //moving down
             facing = 2;
         }
 
-        if (((slope >= 1) || (slope >= -1)) && (Mathf.Abs(Camera.main.ScreenToViewportPoint(Input.mousePosition).x - 0.5f) > Mathf.Abs(Camera.main.ScreenToViewportPoint(Input.mousePosition).y - 0.5f)))
+        if (!((slope >= 0.5625) || (slope <= -0.5625)) && (Camera.main.ScreenToViewportPoint(Input.mousePosition).x < 0.5f))
         {   //moving left
             facing = 3;
         }
 
-        if (!((slope >= 1) || (slope >= -1)) && (Mathf.Abs(Camera.main.ScreenToViewportPoint(Input.mousePosition).x - 0.5f) > Mathf.Abs(Camera.main.ScreenToViewportPoint(Input.mousePosition).y - 0.5f)))
-        { //moving right
+        else if (!((slope >= 0.5625) || (slope <= -0.5625)) && (Camera.main.ScreenToViewportPoint(Input.mousePosition).x > 0.5f))
+        {   //moving right
             facing = 4;
         }
     }

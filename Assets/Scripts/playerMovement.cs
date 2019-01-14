@@ -18,11 +18,24 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")) {
+        if (Input.GetButton("Fire1")) {
             startPos = transform.position;
-            transform.position = Vector2.Lerp(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition), 1);
-            endPos = transform.position;
-            playerAnimation.MovementAnim();
+            endPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //movement(startPos, endPos, speed);
+            playerAnimation.movementAnim();
+
         }
+        transform.position = Vector2.MoveTowards(transform.position, endPos, Time.deltaTime * 5);
+
+    }
+
+    private IEnumerator movement(Vector2 startPos, Vector2 endPos, float speed)
+    {
+        float i = 0;
+        while ((transform.position.x != endPos.x) || (transform.position.y != endPos.y))
+        {
+            i += speed;
+        }
+        yield return new WaitForEndOfFrame();
     }
 }
