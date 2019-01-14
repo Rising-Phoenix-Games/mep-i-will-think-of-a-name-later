@@ -33,23 +33,23 @@ public class playerAnimation : MonoBehaviour
     {
         float slope = (playerMovement.endPos.y - playerMovement.startPos.y) / (playerMovement.endPos.x - playerMovement.startPos.x);
 
-        if (((slope >= 0.5625) || (slope <= -0.5625)) && (playerMovement.endPos.y < 0.5f))
+        if (((slope >= 0.5625) || (slope <= -0.5625)) && (Camera.main.ScreenToViewportPoint(Input.mousePosition).y < 0.5f))
         {   //moving up
             //insert joke about moving up in the world here
             facing = 1;
         }
 
-        else if (((slope >= 0.5625) || (slope <= -0.5625)) && (playerMovement.endPos.y > 0.5f))
+        else if (((slope >= 0.5625) || (slope <= -0.5625)) && (Camera.main.ScreenToViewportPoint(Input.mousePosition).y > 0.5f))
         {   //moving down
             facing = 2;
         }
 
-        if (!((slope >= 0.5625) || (slope <= -0.5625)) && (playerMovement.endPos.x < 0.5f))
+        if (!((slope >= 0.5625) || (slope <= -0.5625)) && (Camera.main.ScreenToViewportPoint(Input.mousePosition).x < 0.5f))
         {   //moving left
             facing = 3;
         }
 
-        else if (!((slope >= 0.5625) || (slope <= -0.5625)) && (playerMovement.endPos.x > 0.5f))
+        else if (!((slope >= 0.5625) || (slope <= -0.5625)) && (Camera.main.ScreenToViewportPoint(Input.mousePosition).x > 0.5f))
         {   //moving right
             facing = 4;
         }
