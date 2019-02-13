@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using swordData;
 
 public class playerAnimation : MonoBehaviour
 {
@@ -9,22 +10,44 @@ public class playerAnimation : MonoBehaviour
     public float attackTime;
     public float attackDuration;
     playerMovement playerMovement;
+    slash slash;
 
     // Start is called before the first frame update
     void Start()
     {
         playerAnim = GetComponent<Animator>();
         playerMovement = GetComponent<playerMovement>();
+        slash = GameObject.FindGameObjectWithTag("playerAttack").GetComponent<slash>();
     }
 
     // Update is called once per frame
     void Update()
-    {
-        if (Input.GetButton("Fire2")&&Time.time > attackTime) {
+    {   float direction = 0;
+        switch (facing)
+        {
+            case 1:
+                direction = 0f;
+                break;
+            case 2:
+                direction = 180f;
+                break;
+            case 3:
+                direction = -90f;
+                break;
+            case 4:
+                direction = 90f;
+                break;
+        }
+        GameObject.FindGameObjectWithTag("playerAttack").transform.rotation = Quaternion.Euler(0, 0, direction);
+
+        if (Input.GetButton("Fire2")&&Time.time > attackTime)
+        {
   	        attackTime = Time.time + attackDuration;
             playerAnim.SetTrigger("attack");
+            
+            slash.dealDamage(slash.target);
         }
-
+        
         playerAnim.SetInteger("facing", facing);
 
     }

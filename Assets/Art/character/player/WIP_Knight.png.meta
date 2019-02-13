@@ -11,17 +11,26 @@ TextureImporter:
     21300012: KnightRightAttack(1)
     21300014: KnightLeftAttack(1)
     21300016: KnightFowardAttack(2)
-    21300018: KnightBackAttack(2)
+    21300018: KnightBackAttack(1)
     21300020: KnightRightAttack(2)
     21300022: KnightLeftAttack(2)
-    21300024: KnightFowardAttack(3)
+    21300024: KnightFowardAttack(2)
     21300026: KnightBackAttack(3)
     21300028: KnightRightAttack(3)
     21300030: KnightLeftAttack(3)
     21300032: KnightFowardHurt
-    21300034: KnightBackHurt
+    21300034: KnightBackAttack(2)
     21300036: KnightRightHurt
     21300038: KnightLeftHurt
+    21300040: KnightFowardAttack(3)
+    21300042: KnightBackAttack(3)
+    21300044: KnightLeftAttack(1)
+    21300046: KnightLeftAttack(2)
+    21300048: KnightLeftAttack(3)
+    21300050: KnightLeft
+    21300052: KnightLeftHurt
+    21300054: KnightFowardHurt
+    21300056: KnightBackHurt
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -156,7 +165,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,7 +185,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -196,7 +205,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -208,35 +217,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KnightLeft
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09e764eb6795b3043ad1c9a88f590d31
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: KnightFowardAttack(1)
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
+        y: 80
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -248,35 +237,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KnightBackAttack(1)
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: af382c0272217b447a64855941e32c87
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: KnightRightAttack(1)
       rect:
         serializedVersion: 2
         x: 32
         y: 96
-        width: 16
+        width: 32
         height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -288,55 +257,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KnightLeftAttack(1)
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b850d3a959681343b9831964abe3c48
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KnightFowardAttack(2)
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 291ffcef71fad7a48a21d2cc8f3f8696
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KnightBackAttack(2)
+      name: KnightBackAttack(1)
       rect:
         serializedVersion: 2
         x: 16
         y: 80
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -353,10 +282,10 @@ TextureImporter:
         serializedVersion: 2
         x: 32
         y: 80
-        width: 16
+        width: 32
         height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -368,35 +297,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KnightLeftAttack(2)
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 447fa5f7de3cda949a8bd7fb38d80e25
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KnightFowardAttack(3)
+      name: KnightFowardAttack(2)
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 48
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -408,35 +317,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KnightBackAttack(3)
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b635401fd00b1274ba045963c2ad3c48
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: KnightRightAttack(3)
       rect:
         serializedVersion: 2
         x: 32
         y: 64
-        width: 16
+        width: 32
         height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -448,55 +337,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KnightLeftAttack(3)
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6412d184c0283e3418c8a1511779c364
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KnightFowardHurt
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a2463cf29c813dd49a2aef26163b8d13
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KnightBackHurt
+      name: KnightBackAttack(2)
       rect:
         serializedVersion: 2
         x: 16
         y: 48
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -516,7 +365,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -528,21 +377,181 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KnightLeftHurt
+      name: KnightFowardAttack(3)
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
+        x: 0
+        y: 16
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abb3b7637dc385d4d81d8b0b5a8c407e
+      spriteID: ba2b193d0d0d3ad43abd25b129c794d2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightBackAttack(3)
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f2ae4ded0adda843b1b85a396b27881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightLeftAttack(1)
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 96
+        width: 32
+        height: 16
+      alignment: 9
+      pivot: {x: 0.75, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 454469f8b15b92d4d8f196cbea999ad9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightLeftAttack(2)
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 80
+        width: 32
+        height: 16
+      alignment: 9
+      pivot: {x: 0.75, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f23062f7c6ef3c4f9d2d73333459d60
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightLeftAttack(3)
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 64
+        width: 32
+        height: 16
+      alignment: 9
+      pivot: {x: 0.75, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81dbc71e12c8ec4478d32aa5b17c49db
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightLeft
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46df2bc709c30ec48a1e1f2c061dd508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightLeftHurt
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddf953fe4e504a94a986b9e51cd956b4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightFowardHurt
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2969e2214f70c41469639e437746d6c4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightBackHurt
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f27341099dc8a94d9b05c8193f4caee
       vertices: []
       indices: 
       edges: []
