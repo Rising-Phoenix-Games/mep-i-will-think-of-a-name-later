@@ -21,7 +21,7 @@ public class playerMovement : MonoBehaviour
         if (Input.GetButton("Fire1")) {
             startPos = transform.position;
             endPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            playerAnimation.movementAnim(startPos, endPos);
+            playerAnimation.movementAnim();
 
         }
         transform.position = Vector2.MoveTowards(transform.position, endPos, Time.deltaTime * 5);
