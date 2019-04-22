@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using swordData;
+using SwordData;
 
 public class slash : MonoBehaviour
 {
@@ -10,6 +10,7 @@ public class slash : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame

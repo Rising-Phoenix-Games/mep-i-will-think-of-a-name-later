@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using swordData;
+using SwordData;
 
 public class playerAnimation : MonoBehaviour
 {
@@ -34,11 +34,8 @@ public class playerAnimation : MonoBehaviour
     {    
         Vector2 endPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
-        float yResult = float.Parse(((endPos.y - 0.5)*2).ToString("0.0000"));
-        float xResult = float.Parse(((endPos.x - 0.5)*2).ToString("0.0000"));
-
-        playerAnim.SetFloat("y", -yResult);
-        playerAnim.SetFloat("x", xResult);
+        playerAnim.SetFloat("y", -((endPos.y - 0.5f) * 2));
+        playerAnim.SetFloat("x", (endPos.x - 0.5f) * 2);
 
         float direction = 0;
 

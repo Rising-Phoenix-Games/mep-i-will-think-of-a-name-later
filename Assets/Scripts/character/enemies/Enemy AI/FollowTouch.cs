@@ -19,7 +19,7 @@ public class FollowTouch : MonoBehaviour
     void Update()
     {
         if ((Vector2.Distance(transform.position, player.transform.position) < movementRangeMax) &&
-                 (Vector2.Distance(transform.position, player.transform.position) > movementRangeMin)) {
+            (Vector2.Distance(transform.position, player.transform.position) > movementRangeMin)) {
 
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }
