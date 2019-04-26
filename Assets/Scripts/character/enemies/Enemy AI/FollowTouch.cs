@@ -24,4 +24,20 @@ public class FollowTouch : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }
     }
+
+    void OnCollisionEnter2D(Collision2D collider)
+    {
+        if (collider.gameObject.tag == "Player")
+        {
+            gameObject.SendMessage("dealMeleeDamage", collider.gameObject, SendMessageOptions.DontRequireReceiver);
+
+        }
+    }
+
+    void death(int health) {
+        if (health <= 0) {
+            this.SendMessage("die", SendMessageOptions.DontRequireReceiver);
+            this.enabled = false;
+        }
+    }
 }

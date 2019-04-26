@@ -7,10 +7,12 @@ public class slash : MonoBehaviour
 {
     public GameObject target;
     public bool canHit = false;
+
+    MeleeAttack swordSlash;
     // Start is called before the first frame update
     void Start()
     {
-        
+        swordSlash = new MeleeAttack(Wooden.damage, Wooden.knockback, GameObject.FindGameObjectWithTag("Player"));
     }
 
     // Update is called once per frame
@@ -38,7 +40,7 @@ public class slash : MonoBehaviour
     {
         if (canHit)
         {
-            target.SendMessage("dealDamage", wooden.damage, SendMessageOptions.DontRequireReceiver);
+            target.SendMessage("takeMeleeDamage", swordSlash, SendMessageOptions.DontRequireReceiver);
         }
     }
 }

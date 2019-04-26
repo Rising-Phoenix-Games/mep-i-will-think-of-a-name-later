@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SwordData;
 
 public class dummy : MonoBehaviour
 {
@@ -17,8 +18,8 @@ public class dummy : MonoBehaviour
         
     }
 
-    void dealDamage(int damage)
+    void dealMeleeDamage(MeleeAttack meleeAttack)
     {
-        Debug.Log("You did: " + damage + " damage");
+        Debug.Log("You did: " + meleeAttack.damage + " damage");
     }
 }

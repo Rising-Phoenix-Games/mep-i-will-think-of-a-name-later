@@ -28,6 +28,7 @@ public class cameraZoom : MonoBehaviour
 
         if (Input.GetButton("Reset Camera")) {
             Camera.main.orthographicSize = 5f;
+            Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, 1, 7);
         }
     }
 }

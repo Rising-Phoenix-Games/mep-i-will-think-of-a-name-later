@@ -15,6 +15,7 @@ public class playerAnimation : MonoBehaviour
     {
         playerAnim = GetComponent<Animator>();
         slash = GameObject.FindGameObjectWithTag("playerAttack").GetComponent<slash>();
+
     }
 
     // Update is called once per frame
@@ -24,7 +25,7 @@ public class playerAnimation : MonoBehaviour
         {
   	        attackTime = Time.time + attackDuration;
             playerAnim.Play("attack");
-            
+
             slash.dealDamage(slash.target);
         }
         
@@ -32,34 +33,20 @@ public class playerAnimation : MonoBehaviour
 
     public void movementAnim()
     {    
-        Vector2 endPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        Vector3 endPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
-        playerAnim.SetFloat("y", -((endPos.y - 0.5f) * 2));
+        playerAnim.SetFloat("y", (endPos.y - 0.5f) * 2);
         playerAnim.SetFloat("x", (endPos.x - 0.5f) * 2);
 
-        float direction = 0;
 
-        if (!(endPos.y >= 0.5625*endPos.x + 0.5) && (endPos.y <= -0.5625*endPos.x + 0.5))
-        {   //moving up
-            //insert joke about moving up in the world here
-            direction = 0f;
-        }
+        Vector3 diff = new Vector3(endPos.x - 0.5f, endPos.y - 0.5f);
 
-        else if ((endPos.y >= 0.5625*endPos.x + 0.5) && !(endPos.y <= -0.5625*endPos.x + 0.5))
-        {   //moving down
-            direction = 180f;
-        }
+        diff.Normalize();
 
-        if ((endPos.y >= 0.5625*endPos.x + 0.5) && (endPos.y <= -0.5625*endPos.x + 0.5))
-        {   //moving left
-            direction = -90f;
-        }
-
-        else if (!(endPos.y >= 0.5625*endPos.x + 0.5) && !(endPos.y <= -0.5625*endPos.x + 0.5))
-        {   //moving right
-            direction = 90f;
-        }
-
-        GameObject.FindGameObjectWithTag("playerAttack").transform.rotation = Quaternion.Euler(0, 0, direction);
+        float rot_z = (Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg) + 79f; //<--- umm the (+79f) if because of it being wierd
+        //TODO: umm fixt the animation thing, there is a wierd thing where the slash will not follow the cursor exactly and
+        //will always be a bit off
+        
+        GameObject.FindGameObjectWithTag("playerAttackPivot").transform.rotation = Quaternion.Euler(0, 0, rot_z);
     }
 }
