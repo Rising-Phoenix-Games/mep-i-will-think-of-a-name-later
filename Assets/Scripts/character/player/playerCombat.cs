@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class playerCombat : MonoBehaviour
 {
     //Health take damage stuff
+    [SerializeField]
     public int maxHealth = 100;
+    [SerializeField]
     public int health;
     public bool isDead = false;
     public float flashSpeed = 5f;                               // The speed the damageImage will fade at.

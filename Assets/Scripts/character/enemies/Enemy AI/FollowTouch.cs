@@ -5,9 +5,9 @@ using UnityEngine;
 public class FollowTouch : MonoBehaviour
 {
     public GameObject player;
-    public float movementRangeMax;
-    public float movementRangeMin;
-    public float speed;
+    // public float movementRangeMax;
+    // public float movementRangeMin;
+    // public float speed;
 
     // Start is called before the first frame update
     void Start()
@@ -18,12 +18,25 @@ public class FollowTouch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //movement(movementRangeMin, movementRangeMax);
+        
+    }
+
+    public void movement(float movementRangeMin, float movementRangeMax, float speed) {
+        Vector2 originalEnemyPosition = transform.position;
+		
         if ((Vector2.Distance(transform.position, player.transform.position) < movementRangeMax) &&
             (Vector2.Distance(transform.position, player.transform.position) > movementRangeMin)) {
 
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-        }
-    }
+			transform.position = Vector2.MoveTowards(transform.position,player.transform.position, speed*Time.deltaTime);
+			
+            
+
+            gameObject.SendMessage("updateMovementAnim", originalEnemyPosition, SendMessageOptions.DontRequireReceiver);
+		}
+		//testEnemyMageAnim.SetInteger("testEnemyMageFacing", testEnemyMageDirection);
+	}
+
 
     void OnCollisionEnter2D(Collision2D collider)
     {
