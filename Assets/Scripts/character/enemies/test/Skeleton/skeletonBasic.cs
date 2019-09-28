@@ -5,9 +5,9 @@ using SwordData;
 
 public class skeletonBasic : MonoBehaviour
 {
-    public int health = 25;
-    public int touchDamage = 10;
-    public float speed = 10;
+    public int health;
+    public int touchDamage;
+    public float speed;
     Rigidbody2D skeleBody;
     FollowTouch FollowTouch;
     public float movementRangeMax;
@@ -40,7 +40,7 @@ public class skeletonBasic : MonoBehaviour
         Vector2 moveDirection = skeleBody.transform.position - meleeAttack.player.transform.position;
         skeleBody.AddForce(moveDirection.normalized * -500f);
 
-        Debug.Log("You did: " + meleeAttack.damage + " damage");
+        Debug.Log("You did: " + meleeAttack.damage + " damage to: " + this.gameObject.name);
 
         if (health <= 0) {
             this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 90f);
@@ -55,6 +55,7 @@ public class skeletonBasic : MonoBehaviour
 
     void die() {
         Debug.Log(this.gameObject.name + " has died, oof");
+        GetComponent<BoxCollider2D>().enabled = false;
         this.enabled = false;
         
     }
