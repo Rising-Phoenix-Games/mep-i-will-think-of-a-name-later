@@ -175,7 +175,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 3}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -573,24 +573,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &510944285 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2642918888004932791, guid: 5eee180bfd0f07a4ba990dbbcad14fe5,
-    type: 3}
-  m_PrefabInstance: {fileID: 2145333604}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &510944289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 510944285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8516827f33a2a1e429e23a5afab6b251, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &759986398 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2043173510397624186, guid: e9bee6684577347448836be5779a603a,
@@ -911,7 +893,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 3}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1186,7 +1168,7 @@ GameObject:
   - component: {fileID: 2135476340}
   - component: {fileID: 2135476341}
   m_Layer: 5
-  m_Name: HP Bar
+  m_Name: HP Bar (Bad)
   m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1466,6 +1448,11 @@ PrefabInstance:
         type: 3}
       propertyPath: godMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642918887565426936, guid: 5eee180bfd0f07a4ba990dbbcad14fe5,
+        type: 3}
+      propertyPath: useKeyboardControls
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5eee180bfd0f07a4ba990dbbcad14fe5, type: 3}

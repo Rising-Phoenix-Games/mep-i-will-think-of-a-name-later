@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿// using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,10 +11,10 @@ public class playerCombat : MonoBehaviour
     [SerializeField]
     public int health;
     public bool isDead = false;
-    public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
- 	public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
+    // public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
+ 	// public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
  	bool damaged;
-	public Image damageImage;
+	// public Image damageImage;
 
     //HP Bar slider thing
     public Slider HPBar;
@@ -42,12 +42,12 @@ public class playerCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(damaged) {
-			 //damageImage.color = flashColour; // ... set the colour of the damageImage to the flash colour.
-		}
-		else {
-			 //	damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed * Time.deltaTime); // ... transition the colour back to clear.
-		}
+        // if(damaged) {
+		// 	 //damageImage.color = flashColour; // ... set the colour of the damageImage to the flash colour.
+		// }
+		// else {
+		// 	 //	damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed * Time.deltaTime); // ... transition the colour back to clear.
+		// }
 		damaged = false; // Reset the damaged flag.
 
 		if (godMode) {

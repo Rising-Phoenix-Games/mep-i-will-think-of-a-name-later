@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class cameraZoom : MonoBehaviour
 {
+
+    public float minZoom, maxZoom;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,12 +18,12 @@ public class cameraZoom : MonoBehaviour
     {
         float d = Input.GetAxis("Mouse ScrollWheel");
 
-        if (d > 0f)
+        if (d > 0f && Camera.main.orthographicSize >= minZoom)
         {
             // scroll up
             Camera.main.orthographicSize -= .25f;
         }
-        else if (d < 0f)
+        else if (d < 0f && Camera.main.orthographicSize <= maxZoom)
         {
             // scroll down
             Camera.main.orthographicSize += .25f;
