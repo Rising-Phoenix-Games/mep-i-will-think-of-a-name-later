@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2371119697975536594}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 6271676936461730598}
   m_RootOrder: 0
@@ -136,6 +136,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -205,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70af235eaa9be6c45a7e00876e09385d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  useKeyboardControls: 0
 --- !u!114 &2956325672517752886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +251,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.14, y: 0.16}
+  m_Size: {x: 0.09, y: 0.16}
   m_EdgeRadius: 0
 --- !u!50 &2017050860
 Rigidbody2D:
