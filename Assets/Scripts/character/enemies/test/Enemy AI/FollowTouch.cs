@@ -25,8 +25,9 @@ public class FollowTouch : MonoBehaviour
     public void movement(float movementRangeMin, float movementRangeMax, float speed) {
         Vector2 originalEnemyPosition = transform.position;
 		
-        if ((Vector2.Distance(transform.position, player.transform.position) < movementRangeMax) &&
-            (Vector2.Distance(transform.position, player.transform.position) > movementRangeMin)) {
+        if (((Vector2.Distance(transform.position, player.transform.position) < movementRangeMax) &&
+            (Vector2.Distance(transform.position, player.transform.position) > movementRangeMin)) &&
+            !GameObject.Find("UI").GetComponent<PauseStuff>().paused) {
 
 			transform.position = Vector2.MoveTowards(transform.position,player.transform.position, speed*Time.deltaTime);
 			

@@ -23,14 +23,14 @@ public class EnemyProjectile : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 		if (direction != Vector2.zero) {
-		transform.position = (Vector2)transform.position + direction * speed * Time.deltaTime;
+			transform.position = (Vector2)transform.position + direction * speed * Time.deltaTime;
 		}
 		else {
-		Debug.LogError(this.gameObject.name + " lacks a direction!");
-		DestroyImmediate(this);
+			Debug.LogError(this.gameObject.name + " lacks a direction!");
+			DestroyImmediate(this);
 		}
 		if (Vector2.Distance(transform.position, GameObject.FindWithTag("Player").transform.position)>maxRange) {
-				Destroy(this.gameObject);
+			Destroy(this.gameObject);
 		}
 	}
 

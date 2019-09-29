@@ -13,7 +13,7 @@ public class playerCombat : MonoBehaviour
     public bool isDead = false;
     // public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
  	// public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
- 	bool damaged;
+ 	//bool damaged;
 	// public Image damageImage;
 
     //HP Bar slider thing
@@ -48,7 +48,7 @@ public class playerCombat : MonoBehaviour
 		// else {
 		// 	 //	damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed * Time.deltaTime); // ... transition the colour back to clear.
 		// }
-		damaged = false; // Reset the damaged flag.
+		//damaged = false; // Reset the damaged flag.
 
 		if (godMode) {
 			health = 100;
@@ -60,7 +60,7 @@ public class playerCombat : MonoBehaviour
 
     public void takeDamage (int amount){
 		int damageamount = amount;
-		damaged = true;
+		//damaged = true;
 	    health -= damageamount;
 	 	if(health <= 0 && !isDead)
         {

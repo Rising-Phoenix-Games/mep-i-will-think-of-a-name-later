@@ -28,8 +28,9 @@ public class FollowShoot : MonoBehaviour
     public void movement(float movementRangeMin, float movementRangeMax, float speed) {
         Vector2 originalEnemyPosition = transform.position;
 		
-        if ((Vector2.Distance(transform.position, player.transform.position) < movementRangeMax) &&
-            (Vector2.Distance(transform.position, player.transform.position) > movementRangeMin)) {
+        if (((Vector2.Distance(transform.position, player.transform.position) < movementRangeMax) &&
+            (Vector2.Distance(transform.position, player.transform.position) > movementRangeMin)) &&
+            !GameObject.Find("UI").GetComponent<PauseStuff>().paused) {
 
 			transform.position = Vector2.MoveTowards(transform.position,player.transform.position, speed*Time.deltaTime);
 			
@@ -42,9 +43,9 @@ public class FollowShoot : MonoBehaviour
 
     public void shoot(float shootRangeMax, float shootRangeMin, float nextFire, float fireRate){
 
-        if (((Vector2.Distance(transform.position, player.transform.position) < shootRangeMax) &&
+        if ((((Vector2.Distance(transform.position, player.transform.position) < shootRangeMax) &&
             (Vector2.Distance(transform.position, player.transform.position) > shootRangeMin)) &&
-            (Time.time > nextFire))
+            (Time.time > nextFire)) && !GameObject.Find("UI").GetComponent<PauseStuff>().paused)
         {
             //nextFire = Time.time + fireRate;
             gameObject.SendMessage("fireProjectile", player, SendMessageOptions.DontRequireReceiver);
