@@ -13,6 +13,7 @@ public class slash : MonoBehaviour
     void Start()
     {
         swordSlash = new MeleeAttack(Wooden.damage, Wooden.knockback, GameObject.FindGameObjectWithTag("Player"));
+        canHit = false;
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class slash : MonoBehaviour
     }
 
 
-    void OnTriggerEnter2D(Collider2D collider)
+    void OnTriggerStay2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "enemy")
         {
@@ -31,10 +32,10 @@ public class slash : MonoBehaviour
         }
     }
 
-    void OnTriggerExit2D(Collider2D collider)
+    /* void OnTriggerExit2D(Collider2D collider)
     {
         canHit = false;
-    }
+    } */
 
     public void dealDamage(GameObject target)
     {
